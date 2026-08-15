@@ -6,9 +6,9 @@ interface PedidosProps {
 }
 
 const Pedidos: React.FC<PedidosProps> = ({ onAccionRealizada }) => {
-  // Estado local: contador de acciones ejecutadas dentro del módulo Pedidos
+
   const [accionesModulo, setAccionesModulo] = useState<number>(0);
-  // Estado local: controla si se muestra u oculta el panel de estadísticas
+
   const [mostrarPanel, setMostrarPanel] = useState<boolean>(true);
 
   const manejarAccionLocal = (modulo: string, accion: string): void => {
