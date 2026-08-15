@@ -1,0 +1,46 @@
+.card-accion {
+  border: 1.5px solid var(--borde, #c8e6c9);
+  border-radius: var(--radio-borde-lg, 16px);
+  padding: 18px;
+  margin: 10px 0;
+  background-color: var(--blanco, #ffffff);
+  box-shadow: var(--sombra-suave, 0 3px 10px rgba(46, 125, 50, 0.08));
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.card-accion:hover {
+  transform: translateY(-3px);
+  border-color: var(--verde-suave, #81c784);
+  box-shadow: var(--sombra-media, 0 8px 22px rgba(46, 125, 50, 0.14));
+}
+
+.card-accion h3 {
+  margin: 0 0 8px 0;
+  color: var(--verde-oscuro, #2e7d32);
+}
+
+.card-accion p {
+  margin: 0 0 14px 0;
+  color: var(--gris-suave, #78909c);
+  font-size: 14px;
+}
+
+.card-accion button {
+  padding: 9px 18px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--verde-suave, #81c784) 0%, var(--verde-primario, #43a047) 100%);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.card-accion button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.card-accion button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

@@ -1,0 +1,197 @@
+/* =========================================================
+   Paleta corporativa CoAgrix — versión clara y suave
+   (blanco + verdes claros, inspirada en el logo oficial)
+   ========================================================= */
+:root {
+  --verde-oscuro: #2e7d32;
+  --verde-primario: #43a047;
+  --verde-suave: #81c784;
+  --verde-claro: #e8f5e9;
+  --verde-fondo: #f4faf4;
+  --blanco: #ffffff;
+  --gris-texto: #37474f;
+  --gris-suave: #78909c;
+  --borde: #c8e6c9;
+  --amarillo-sol: #ffca28;
+
+  --fuente-corporativa: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --radio-borde: 10px;
+  --radio-borde-lg: 16px;
+  --sombra-suave: 0 3px 10px rgba(46, 125, 50, 0.08);
+  --sombra-media: 0 8px 22px rgba(46, 125, 50, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--fuente-corporativa);
+  color: var(--gris-texto);
+  background: linear-gradient(180deg, var(--verde-fondo) 0%, var(--blanco) 260px);
+}
+
+.contenedor {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 36px 20px 50px;
+}
+
+/* ===== Encabezado de marca (logo + título) ===== */
+.marca-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 26px;
+  padding: 18px 22px;
+  background: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-borde-lg);
+  box-shadow: var(--sombra-suave);
+  flex-wrap: wrap;
+}
+
+.marca-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 3px var(--verde-claro);
+}
+
+.marca-texto h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: var(--verde-oscuro);
+}
+
+.marca-subtitulo {
+  margin: 2px 0 0 0;
+  font-size: 13px;
+  color: var(--gris-suave);
+  letter-spacing: 0.2px;
+}
+
+.contenedor h2 {
+  color: var(--verde-oscuro);
+  margin-bottom: 4px;
+}
+
+/* ===== Navegación entre módulos ===== */
+.nav-modulos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.nav-modulos button {
+  padding: 9px 16px;
+  border: 1.5px solid var(--borde);
+  border-radius: 999px;
+  background: var(--blanco);
+  color: var(--verde-oscuro);
+  font-family: var(--fuente-corporativa);
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.nav-modulos button:hover {
+  background: var(--verde-claro);
+  transform: translateY(-1px);
+}
+
+.nav-modulos button.activo {
+  background: linear-gradient(135deg, var(--verde-suave) 0%, var(--verde-primario) 100%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: var(--sombra-suave);
+}
+
+/* ===== Cabecera de cada módulo (título + switch) ===== */
+.cabecera-modulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.boton-switch {
+  padding: 6px 16px;
+  border: 1.5px solid var(--verde-suave);
+  border-radius: 999px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-family: var(--fuente-corporativa);
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.boton-switch:hover {
+  background: #d5ecd7;
+}
+
+/* ===== Paneles de estado / vistas previas dinámicas ===== */
+.panel-estado,
+.vista-previa,
+.resultado-envio {
+  margin-top: 16px;
+  padding: 16px 20px;
+  background: var(--blanco);
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  font-size: 14px;
+  color: var(--gris-texto);
+}
+
+.vista-previa {
+  border-left: 4px solid var(--verde-primario);
+  background: var(--verde-claro);
+}
+
+.resultado-envio h4 {
+  margin: 0 0 8px 0;
+  color: var(--verde-oscuro);
+}
+
+.resultado-envio ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.contador-acciones,
+.contador-tarjeta {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--verde-primario);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--borde);
+  margin: 22px 0;
+}
+
+.footer-autor {
+  margin-top: 34px;
+  font-size: 13px;
+  color: var(--gris-suave);
+  text-align: center;
+}
+
+.footer-autor span {
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
