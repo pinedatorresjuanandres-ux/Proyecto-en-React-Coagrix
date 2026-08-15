@@ -13,16 +13,15 @@ interface DatosRegistro {
 }
 
 const Registro: React.FC<RegistroProps> = ({ onAccionRealizada }) => {
-  // Estado local tipado para cada campo del formulario
+  
   const [nombre, setNombre] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [rol, setRol] = useState<string>('Campesino');
 
-  // Estado local para el indicador de carga del envío
   const [enviando, setEnviando] = useState<boolean>(false);
 
-  // Estado local con la lista de registros hechos en esta sesión (para visualizarlos)
+
   const [registros, setRegistros] = useState<DatosRegistro[]>([]);
 
   const manejarNombre = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -52,7 +51,6 @@ const Registro: React.FC<RegistroProps> = ({ onAccionRealizada }) => {
       setEnviando(false);
       onAccionRealizada('Registro', `Nuevo registro de ${nombre} como ${rol}`);
 
-      // Limpia el formulario después de registrar
       setNombre('');
       setEmail('');
       setPassword('');
@@ -88,14 +86,13 @@ const Registro: React.FC<RegistroProps> = ({ onAccionRealizada }) => {
         </button>
       </form>
 
-      {/* Visualización en vivo de lo que el usuario va escribiendo */}
+
       {(nombre !== '' || email !== '') && (
         <div className="vista-previa">
           <strong>Vista previa:</strong> {nombre || '(sin nombre)'} — {rol} — {email || '(sin correo)'}
         </div>
       )}
 
-      {/* Visualización de todos los registros realizados en esta sesión */}
       {registros.length > 0 && (
         <div className="resultado-envio">
           <h4>Personas registradas en esta sesión ({registros.length})</h4>
