@@ -6,9 +6,9 @@ interface UsuariosProps {
 }
 
 const Usuarios: React.FC<UsuariosProps> = ({ onAccionRealizada }) => {
-  // Estado local: contador de acciones ejecutadas dentro del módulo Usuarios
+
   const [accionesModulo, setAccionesModulo] = useState<number>(0);
-  // Estado local: controla si se muestra u oculta el panel de estadísticas
+
   const [mostrarPanel, setMostrarPanel] = useState<boolean>(true);
 
   const manejarAccionLocal = (modulo: string, accion: string): void => {
