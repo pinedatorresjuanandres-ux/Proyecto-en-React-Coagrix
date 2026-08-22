@@ -290,6 +290,19 @@ h2 { letter-spacing: -.03em; line-height: 1.15; }
 .modal-header h2 { margin: 0; font-size: 1.2rem; }
 .modal-header button { border: 0; color: var(--muted); background: transparent; font-size: 1.7rem; line-height: 1; }
 
+/* Panel de la actividad de API REST - Realizado por JUAN ANDRES PINEDA */
+.panel-notificaciones { position: fixed; right: 20px; bottom: 20px; z-index: 120; width: min(330px, calc(100% - 40px)); padding: 15px; border: 1px solid #d9e7d8; border-radius: 13px; background: white; box-shadow: 0 12px 28px rgba(27, 69, 34, .18); }
+.panel-notificaciones-titulo { display: flex; align-items: center; gap: 9px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.panel-notificaciones-titulo > span { font-size: 1.2rem; }
+.panel-notificaciones-titulo strong, .panel-notificaciones-titulo small { display: block; }
+.panel-notificaciones-titulo strong { font-size: .82rem; color: var(--green-dark); }
+.panel-notificaciones-titulo small { margin-top: 2px; color: var(--muted); font-size: .67rem; }
+.panel-notificaciones-lista { display: grid; gap: 8px; margin: 11px 0 0; padding: 0; list-style: none; }
+.panel-notificaciones-lista li { padding: 8px 9px; border-radius: 7px; background: #f4faf3; color: #405243; font-size: .71rem; line-height: 1.35; }
+.panel-notificaciones-estado, .panel-notificaciones-error { margin: 12px 0 2px; font-size: .72rem; }
+.panel-notificaciones-estado { color: var(--muted); }
+.panel-notificaciones-error { color: #b42318; }
+
 @media (max-width: 1000px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .product-grid { grid-template-columns: repeat(2, 1fr); }

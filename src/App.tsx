@@ -31,6 +31,7 @@ import CompanySearch from './pages/CompanySearch';
 import MerchantDashboard from './pages/MerchantDashboard';
 import MerchantCompare from './pages/MerchantCompare';
 import { AppFrame } from './components/PageFrame';
+import PanelNotificaciones from './components/PanelNotificaciones';
 
 function NotFound() {
   return <AppFrame footer><main className="page-container"><div className="container"><div className="surface empty-state"><span>🌾</span><h1>Página no encontrada</h1><p>La vista que buscas no existe en esta demo frontend.</p><a className="btn-primary" href="/">Volver al inicio</a></div></div></main></AppFrame>;
@@ -38,39 +39,48 @@ function NotFound() {
 
 export default function App() {
   const path = window.location.pathname.replace(/\/$/, '') || '/';
+  let pagina;
+
   // El catálogo es la experiencia de entrada de la aplicación.
-  if (path === '/' || path === '/catalog') return <Catalog />;
-  if (path === '/home') return <Home />;
-  if (path === '/login') return <Login />;
-  if (path === '/login-agricultor') return <LoginAgricultor />;
-  if (path === '/login-comerciante') return <LoginComerciante />;
-  if (path === '/login-empresa') return <LoginEmpresa />;
-  if (path === '/register') return <Registro />;
-  if (path === '/register-agricultor') return <RegistroAgricultor />;
-  if (path === '/register-comerciante') return <RegistroComerciante />;
-  if (path === '/register-empresa') return <RegistroEmpresa />;
-  if (path === '/catalog') return <Catalog />;
-  if (path.startsWith('/product/')) return <ProductDetail />;
-  if (path === '/favorites') return <Favorites />;
-  if (path === '/publications') return <Publicaciones />;
-  if (path === '/create-publication') return <CrearPublicacion />;
-  if (path.startsWith('/edit-publication/')) return <EditarPublicacion />;
-  if (path === '/inbox') return <Inbox />;
-  if (path === '/conversation') return <Conversation />;
-  if (path === '/cart') return <Cart />;
-  if (path === '/orders') return <Orders />;
-  if (path === '/admin-dashboard') return <AdminDashboard />;
-  if (path === '/admin-users') return <AdminUsers />;
-  if (path.startsWith('/admin-user-detail')) return <AdminUserDetail />;
-  if (path === '/admin-publications') return <AdminPublications />;
-  if (path === '/farmer-dashboard') return <FarmerDashboard />;
-  if (path === '/farmer-profile') return <FarmerProfile />;
-  if (path === '/farmer-orders') return <FarmerOrders />;
-  if (path === '/farmer-publications') return <FarmerPublications />;
-  if (path === '/company-dashboard') return <CompanyDashboard />;
-  if (path === '/company-profile') return <CompanyProfile />;
-  if (path === '/company-search') return <CompanySearch />;
-  if (path === '/merchant-dashboard') return <MerchantDashboard />;
-  if (path === '/merchant-compare') return <MerchantCompare />;
-  return <NotFound />;
+  if (path === '/' || path === '/catalog') pagina = <Catalog />;
+  else if (path === '/home') pagina = <Home />;
+  else if (path === '/login') pagina = <Login />;
+  else if (path === '/login-agricultor') pagina = <LoginAgricultor />;
+  else if (path === '/login-comerciante') pagina = <LoginComerciante />;
+  else if (path === '/login-empresa') pagina = <LoginEmpresa />;
+  else if (path === '/register') pagina = <Registro />;
+  else if (path === '/register-agricultor') pagina = <RegistroAgricultor />;
+  else if (path === '/register-comerciante') pagina = <RegistroComerciante />;
+  else if (path === '/register-empresa') pagina = <RegistroEmpresa />;
+  else if (path.startsWith('/product/')) pagina = <ProductDetail />;
+  else if (path === '/favorites') pagina = <Favorites />;
+  else if (path === '/publications') pagina = <Publicaciones />;
+  else if (path === '/create-publication') pagina = <CrearPublicacion />;
+  else if (path.startsWith('/edit-publication/')) pagina = <EditarPublicacion />;
+  else if (path === '/inbox') pagina = <Inbox />;
+  else if (path === '/conversation') pagina = <Conversation />;
+  else if (path === '/cart') pagina = <Cart />;
+  else if (path === '/orders') pagina = <Orders />;
+  else if (path === '/admin-dashboard') pagina = <AdminDashboard />;
+  else if (path === '/admin-users') pagina = <AdminUsers />;
+  else if (path.startsWith('/admin-user-detail')) pagina = <AdminUserDetail />;
+  else if (path === '/admin-publications') pagina = <AdminPublications />;
+  else if (path === '/farmer-dashboard') pagina = <FarmerDashboard />;
+  else if (path === '/farmer-profile') pagina = <FarmerProfile />;
+  else if (path === '/farmer-orders') pagina = <FarmerOrders />;
+  else if (path === '/farmer-publications') pagina = <FarmerPublications />;
+  else if (path === '/company-dashboard') pagina = <CompanyDashboard />;
+  else if (path === '/company-profile') pagina = <CompanyProfile />;
+  else if (path === '/company-search') pagina = <CompanySearch />;
+  else if (path === '/merchant-dashboard') pagina = <MerchantDashboard />;
+  else if (path === '/merchant-compare') pagina = <MerchantCompare />;
+  else pagina = <NotFound />;
+
+  return (
+    <>
+      {pagina}
+      {/* Realizado por JUAN ANDRES PINEDA */}
+      <PanelNotificaciones />
+    </>
+  );
 }
